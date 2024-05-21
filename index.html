@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        <h1 style="color: red;">Task @May21</h1>
+        <pre>
+            <strong>problem 1:</strong>
+            write a function that takes a variable(n) and returns sum of n natural numbers.
+        
+            var a=7;
+            var b=0;
+            function nsum(a){
+
+                b=a*(a+1)/2;
+                return b;
+
+            }
+
+            console.log(nsum(a));
+
+
+            output:
+            28
+        </pre>
+        <pre>
+            <strong>problem 2:</strong>
+            write a function that takes a string anmd changes the case of the character following a symbol.
+
+            var a="_bh_arg_hav";
+            var b="";
+            function casechange(a){
+                for(i=0;i< a.length;i++){
+                    if(a[i]=="_" || a[i]=="@" || a[i]=="#" || a[i]=="%" || a[i]=="-" || a[i]=="!"){
+                        i++;
+                        b=b+a[i].toUpperCase();
+                    }
+                    else{
+                        b=b+a[i];
+                    }
+                }
+                return b;
+            }
+            console.log(casechange(a));
+
+            
+            output:
+            BhArgHav
+        </pre>
+        <h3>Problem Solving(Arrays - Level Easy)...</h3>
+        <pre>
+            <strong>Question 11:</strong>
+            Create a function that returns an array of strings sorted by length in ascending order.
+
+            var a=["a","ccc","bb","dddd"];
+            var temp=null;
+            function sort(a){
+                for(i=0;i< a.length;i++){
+                    for(j=i+1;j< a.length;j++){
+                        if(a[i].length>a[j].length){
+                            temp=a[i];                  //Here i have used a sorting method to sort the strings in an array in ascending order 
+                            a[i]=a[j];
+                            a[j]=temp;
+                        }
+                    }                
+                }
+                return a;
+            }
+            console.log(sort(a));
+
+
+            output:
+            [
+            "a",
+            "bb",
+            "ccc",
+            "dddd"
+            ]
+        </pre>
+        <pre>
+            <strong>Question 12:</strong>
+            Create a function that takes an array of arrays with numbers. Return a new (single) array with the largest numbers of each.
+
+            var a=[[4,2,7,1],[20,70,40,90],[1,2,0]];
+            var temp=null;
+            var b=[];
+            function arrlar(){
+                for(i=0;i< a.length;i++){
+                    for(j=0;j< a[i].length;j++){
+                        for(k=j+1;k< a[i].length;k++){
+                            if(a[i][j]>a[i][k]){
+                                temp=a[i][j];
+                                a[i][j]=a[i][k];
+                                a[i][k]=temp;
+                            }
+                        }     
+                    }
+                    b.push(a[i][a[i].length-1]); 
+                }
+                return b;
+            }
+            console.log(arrlar(a));
+
+
+            output:
+            [
+            7,
+            90,
+            2
+            ]
+        </pre>
+        <pre>
+            <strong>Question 13:</strong>
+            Create a function that takes an array of numbers and returns the second largest number.
+
+            var a=[10,40,30,20,50];
+            var temp=null;
+            function seclar(a){
+                for(i=0;i<a.length;i++){
+                    for(j=i+1;j<a.length;j++){
+                        if(a[i]>a[j]){
+                            temp=a[i];
+                            a[i]=a[j];
+                            a[j]=temp;
+                        }
+                    }
+                }
+                return a[a.length-2];
+            }
+            console.log(seclar(a));
+
+
+            output:
+            40
+        </pre>
+    </article>
+    
+
+
+    <script>
+        
+        //sum of n natural numbers...
+        var a=7;
+        var b=0;
+        function nsum(a){
+            b=a*(a+1)/2;
+            return b;
+        }
+        console.log(nsum(a)); 
+
+
+        // change the case of the letter following the special character...
+        var a="_bh_arg_hav";
+        var b="";
+        function casechange(a){
+            for(i=0;i<a.length;i++){
+                if(a[i]=="_" || a[i]=="@" || a[i]=="#" || a[i]=="%" || a[i]=="-" || a[i]=="!"){
+                    i++;
+                    b=b+a[i].toUpperCase();
+                }
+                else{
+                    b=b+a[i];
+                }
+            }
+            return b;
+        }
+        console.log(casechange(a));
+
+        // Problem Solving(Arrays - Level Easy)...
+        
+        // 11th question...
+        var a=["a","ccc","bb","dddd"];
+        var temp=null;
+        function sort(a){
+            for(i=0;i<a.length;i++){
+                for(j=i+1;j<a.length;j++){
+                    if(a[i].length>a[j].length){
+                        temp=a[i];                  //Here i have used a sorting method to sort the strings in an array in ascending order 
+                        a[i]=a[j];
+                        a[j]=temp;
+                    }
+                }                
+            }
+            return a;
+        }
+        console.log(sort(a));
+
+
+        // 12th question...
+        var a=[[4,2,7,1],[20,70,40,90],[1,2,0]];
+        var temp=null;
+        var b=[];
+        function arrlar(){
+            for(i=0;i<a.length;i++){
+                for(j=0;j<a[i].length;j++){
+                    for(k=j+1;k<a[i].length;k++){
+                        if(a[i][j]>a[i][k]){
+                            temp=a[i][j];
+                            a[i][j]=a[i][k];
+                            a[i][k]=temp;
+                        }
+                    }     
+                }
+                b.push(a[i][a[i].length-1]); 
+            }
+            return b;
+        }
+        console.log(arrlar(a));
+
+
+        // 13th question...
+        var a=[10,40,30,20,50];
+        var temp=null;
+        function seclar(a){
+            for(i=0;i<a.length;i++){
+                for(j=i+1;j<a.length;j++){
+                    if(a[i]>a[j]){
+                        temp=a[i];
+                        a[i]=a[j];
+                        a[j]=temp;
+                    }
+                }
+            }
+            return a[a.length-2];
+        }
+        console.log(seclar(a));
+
+
+
+
+
+
+
+        
+
+    </script>
+</body>
+</html>
